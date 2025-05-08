@@ -1,0 +1,69 @@
+.weather-widget {
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.location-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #38bdf8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0ea5e9;
+}
+
+.weather-card {
+  margin-top: 16px;
+  background: #334155;
+  border-radius: 10px;
+}
+.stats{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.stats p {
+  margin: 4px 0;
+}
+
+.forecast-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.forecast-card {
+  background: #475569;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+}

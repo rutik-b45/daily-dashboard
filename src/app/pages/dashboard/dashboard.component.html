@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<div *ngIf="loading" class="loading">
+  Loading weather data...
+</div>
+<div class="weather-widget" *ngIf="currentWeather">
+    <div class="current-weather">
+      <div class="location-info" *ngIf="location">
+        <h1>{{ location.name }}, {{ location.region }}</h1>
+      <h2>{{ currentWeather.condition.text }}</h2>
+      <p>{{ currentWeather.temp_c }} °C</p>
+      <p>Wind: {{ currentWeather.wind_kph }} km/h</p>
+      <p>Pressure: {{ currentWeather.pressure_mb }} mb</p>
+    </div>
+  
+    <div class="forecast">
+      <div *ngFor="let day of forecast">
+        <p>{{ day.date | date:'EEE' }}</p>
+        <img [src]="'https:' + day.day.condition.icon" />
+        <p>{{ day.day.avgtemp_c }} °C</p>
+      </div>
+    </div>
+  </div>
+  
