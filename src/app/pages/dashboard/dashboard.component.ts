@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../../weather.service';
+import { NewsService } from '../../news.service';
 
 @Component({
   selector: 'app-dashboard',
-  standalone:true,
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
@@ -13,21 +14,47 @@ export class DashboardComponent implements OnInit {
   currentWeather: any;   
   forecast: any[] = []; 
   location: any;
-  loading: boolean = false;
-  constructor(private weatherService: WeatherService) {}
+  newsArticles: any[] = [];
+  loadingWeather: boolean = false;
+  loadingNews: boolean = false;
+
+  constructor(
+    private weatherService: WeatherService,
+    private newsService: NewsService
+  ) {}
+
   ngOnInit() {
-    this.loading = true;
+    this.fetchWeather();
+    this.fetchNews();
+  }
+
+  fetchWeather() {
+    this.loadingWeather = true;
     this.weatherService.getWeather().subscribe({
       next: (data) => {
-        this.loading = false;
+        this.loadingWeather = false;
         this.currentWeather = data.current;
         this.forecast = data.forecast.forecastday;
         this.location = data.location;
       },
       error: (err) => {
-        this.loading = false;
+        this.loadingWeather = false;
         console.error('Error fetching weather:', err);
         alert('Failed to load weather data. Please try again later.');
+      }
+    });
+  }
+
+  fetchNews() {
+    this.loadingNews = true;
+    this.newsService.getNews().subscribe({
+      next: (response) => {
+        this.loadingNews = false;
+        this.newsArticles = response.articles.slice(0, 3);
+      },
+      error: (err) => {
+        this.loadingNews = false;
+        console.error('Error fetching news:', err);
       }
     });
   }

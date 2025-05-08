@@ -1,22 +1,42 @@
-<div *ngIf="loading" class="loading">
-  Loading weather data...
-</div>
-<div class="weather-widget" *ngIf="currentWeather">
+<div class="dashboard-container">
+
+  <!-- Weather Widget -->
+  <div class="widget weather-widget" *ngIf="currentWeather">
+    <div *ngIf="loadingWeather" class="loading">Loading weather data...</div>
     <div class="current-weather">
       <div class="location-info" *ngIf="location">
         <h1>{{ location.name }}, {{ location.region }}</h1>
-      <h2>{{ currentWeather.condition.text }}</h2>
-      <p>{{ currentWeather.temp_c }} °C</p>
-      <p>Wind: {{ currentWeather.wind_kph }} km/h</p>
-      <p>Pressure: {{ currentWeather.pressure_mb }} mb</p>
-    </div>
-  
-    <div class="forecast">
-      <div *ngFor="let day of forecast">
-        <p>{{ day.date | date:'EEE' }}</p>
-        <img [src]="'https:' + day.day.condition.icon" />
-        <p>{{ day.day.avgtemp_c }} °C</p>
+        <h2>{{ currentWeather.condition.text }}</h2>
+        <p>{{ currentWeather.temp_c }} °C</p>
+        <p>Wind: {{ currentWeather.wind_kph }} km/h</p>
+        <p>Pressure: {{ currentWeather.pressure_mb }} mb</p>
+      </div>
+      <div class="forecast">
+        <div *ngFor="let day of forecast">
+          <p>{{ day.date | date:'EEE' }}</p>
+          <img [src]="'https:' + day.day.condition.icon" />
+          <p>{{ day.day.avgtemp_c }} °C</p>
+        </div>
       </div>
     </div>
   </div>
-  
+
+<!-- News Widget -->
+<div class="widget news-widget" *ngIf="newsArticles.length > 0">
+  <h2>Top News</h2>
+  <div *ngIf="loadingNews" class="loading">Loading news...</div>
+
+  <div class="news-grid">
+    <div class="news-card" *ngFor="let article of newsArticles">
+      <img [src]="article.urlToImage" alt="news image" class="news-card-image" />
+      <div class="news-card-body">
+        <h3 class="news-title">{{ article.title }}</h3>
+        <p class="news-date">{{ article.publishedAt | date: 'mediumDate' }}</p>
+        <p class="news-description">{{ article.description }}</p>
+        <a [href]="article.url" target="_blank" class="news-link">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
