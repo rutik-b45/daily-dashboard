@@ -19,4 +19,11 @@ export class NewsService {
 
     return this.http.get(this.baseUrl, { params });
   }
+  getNewsByKeyword(keyword: string): Observable<any> {
+    const params = new HttpParams()
+      .set('q', keyword)
+      .set('apiKey', this.apiKey);
+  
+    return this.http.get('https://newsapi.org/v2/everything', { params });
+  }
 }

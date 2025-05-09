@@ -6,13 +6,16 @@
         type="text"
         class="search-input"
         placeholder="Search breaking news..."
+        [(ngModel)]="category"
       />
-      <button class="search-button">Search</button>
+      <button class="search-button" (click) = "getNews()">Search</button>
     </div>
   </div>
   <div class="widget news-widget main-news" *ngIf="newsArticles.length > 0">
-    <div *ngIf="newsLoading" class="loading">Loading news...</div>
-    <div class="news-grid">
+    <div *ngIf="newsLoading" class="loading-spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+    <div class="news-grid" *ngIf = "!newsLoading">
       <div class="news-card" *ngFor="let article of newsArticles">
         <img [src]="article.urlToImage" alt="news image" class="news-card-image" />
         <div class="news-card-body">
