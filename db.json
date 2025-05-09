@@ -1,0 +1,65 @@
+{
+    "notes": [
+      {
+        "id": 1,
+        "title": "Project Kickoff",
+        "content": "Initial meeting with the team. Assigned roles and responsibilities.",
+        "date": "2025-05-06"
+      },
+      {
+        "id": 2,
+        "title": "API Integration",
+        "content": "Integrated the weather API and tested response data in the dashboard.",
+        "date": "2025-05-07"
+      },
+      {
+        "id": 3,
+        "title": "Routing Setup",
+        "content": "Configured routing for dashboard, weather, news, and notes pages.",
+        "date": "2025-05-07"
+      },
+      {
+        "id": 4,
+        "title": "Responsive Layout",
+        "content": "Sidebar and main content adjusted for mobile and desktop views.",
+        "date": "2025-05-08"
+      },
+      {
+        "id": 5,
+        "title": "Font Awesome Icons",
+        "content": "Added icons for navigation links using Font Awesome.",
+        "date": "2025-05-08"
+      },
+      {
+        "id": 6,
+        "title": "News API Integration",
+        "content": "Fetched and displayed top 3 headlines from NewsAPI on the dashboard.",
+        "date": "2025-05-08"
+      },
+      {
+        "id": 7,
+        "title": "Dashboard UI",
+        "content": "Styled dashboard with custom title and divider. Improved spacing.",
+        "date": "2025-05-08"
+      },
+      {
+        "id": 8,
+        "title": "Note Service Created",
+        "content": "Built NoteService to handle CRUD operations using JSON server.",
+        "date": "2025-05-09"
+      },
+      {
+        "id": 9,
+        "title": "Fetch Notes",
+        "content": "Fetched and displayed notes on the notes page using the service.",
+        "date": "2025-05-09"
+      },
+      {
+        "id": 10,
+        "title": "Upcoming Tasks",
+        "content": "Implement add, update, delete features for notes with UI support.",
+        "date": "2025-05-09"
+      }
+    ]
+  }
+  

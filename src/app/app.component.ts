@@ -4,29 +4,28 @@ import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule,RouterOutlet],
+  standalone: true,
+  imports: [RouterModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  currentTitle = 'Dashboard';
+  currentTitle = 'Welcome Back! Here\'s Your Daily Overview';
 
   titleMap: { [key: string]: string } = {
-    '/': 'Dashboard',
-    '/weather': 'Weather',
-    '/news': 'News',
-    '/notes': 'Notes',
-    '/saved': 'Saved',
+    '/': 'Welcome Back! Here\'s Your Daily Overview',
+    '/weather': '🌤️ Today\'s Weather',
+    '/news': '🗞️ Top Headlines Just for You',
+    '/notes': '📝 Not It Down — Your Daily Notes',
+    '/saved': '📌 Your Bookmarked Insights',
   };
 
   constructor(private router: Router) {
-    
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
+      .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects;
-        this.currentTitle = this.titleMap[url] || 'Dashboard';
+        this.currentTitle = this.titleMap[url] || 'Daily Dashboard';
       });
   }
-
 }

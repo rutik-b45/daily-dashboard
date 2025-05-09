@@ -1,5 +1,5 @@
 <div class="dashboard-container">
-
+ <div class="note-weather">
   <!-- Weather Widget -->
   <div class="widget weather-widget" *ngIf="currentWeather">
     <div *ngIf="loadingWeather" class="loading">Loading weather data...</div>
@@ -20,10 +20,23 @@
       </div>
     </div>
   </div>
+  <div class="widget notes-widget" *ngIf="Notes.length > 0">
+    <h2><i class="icon">📝</i> Your Notes</h2>
+    <div *ngFor="let note of Notes" class="note-preview">
 
+      <div class="note-title">
+      <h3>{{ note.title }}</h3>
+      <p class="note-date">{{ note.date | date: 'dd/MM/yyyy' }}</p>
+    </div>
+      <span class="note-tag">{{ note.content }}</span>
+      <hr/>
+    </div>
+    <a class="view-notes-btn" routerLink = "/notes">Manage Notes</a>
+  </div>
+</div>
 <!-- News Widget -->
 <div class="widget news-widget" *ngIf="newsArticles.length > 0">
-  <h2>Top News</h2>
+  <h2>Top Headlines</h2>
   <div *ngIf="loadingNews" class="loading">Loading news...</div>
 
   <div class="news-grid">

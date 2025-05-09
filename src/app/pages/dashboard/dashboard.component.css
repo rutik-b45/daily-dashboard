@@ -138,3 +138,41 @@
     display: flex;
     justify-content: space-between;
   }
+  
+  .note-weather{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .notes-widget{
+    color: black;
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+  }
+  .view-notes-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: #fafafa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .view-notes-btn:hover {
+    background-color: #f0f0f0;
+  }
+  .note-title{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
