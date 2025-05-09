@@ -3,10 +3,11 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 export interface Note {
-  id?: number;
+  id: number;
   title: string;
   content: string;
   date:string;
+  saved:boolean;
 }
 
 @Injectable({
@@ -32,7 +33,6 @@ export class NotesService {
   deleteNote(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
   getNoteById(id: number): Observable<Note> {
     return this.http.get<Note>(`${this.apiUrl}/${id}`);
   }

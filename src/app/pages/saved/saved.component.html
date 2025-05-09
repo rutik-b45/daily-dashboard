@@ -1,1 +1,20 @@
-<p>saved works!</p>
+<div *ngIf="savedNotes.length > 0" class="notes-list">
+    <div *ngFor="let note of savedNotes" class="note-card">
+      <div class="note-header">
+        <h4>{{ note.title }}</h4>
+        <div class="note-actions">
+          <button class="icon-btn edit-btn" title="Edit">
+            <i class="fas fa-pen"></i>
+          </button>
+          <button class="icon-btn delete-btn" title="Delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+      <p class="note-content">{{ note.content }}</p>
+      <button class="icon-btn save-btn" (click) = "toggleSave(note)">
+        <i [ngClass]="note.saved ? 'fas fa-bookmark' : 'far fa-bookmark'"></i>
+      </button>
+    </div>
+  </div>
+  
