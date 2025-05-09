@@ -36,6 +36,7 @@ export class SavedComponent implements OnInit {
 
   }
   deleteNote(note: Note): void {
+    if(!note.id)return;
     this.noteService.deleteNote(note.id).subscribe(() => {
       this.getSavedNotes();
 

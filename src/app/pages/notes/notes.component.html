@@ -1,10 +1,28 @@
 <!-- Notes List -->
+<div>
+<div class="create-note">
+  <button class="create-note-btn" (click) = "openModel()">Create Note</button>
+</div>
+<div class="modal-overlay" *ngIf = "showModel">
+  <div class="modal">
+    <h3>Create New Note</h3>
+
+    <input type="text" [(ngModel)] = "newNote.title" placeholder="Title" class="form-input" />
+    <textarea rows="4" placeholder="Content" [(ngModel)] = "newNote.content" class="form-input"></textarea>
+
+    <div class="modal-actions">
+      <button  class="save-btn-note" (click) = "saveNote()">💾 Save</button>
+      <button class="cancel-btn" (click) = "cancelModel()">❌ Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div *ngIf="Notes.length > 0" class="notes-list">
     <div *ngFor="let note of Notes" class="note-card">
       <div class="note-header">
         <h4>{{ note.title }}</h4>
         <div class="note-actions">
-          <button class="icon-btn edit-btn" title="Edit">
+          <button class="icon-btn edit-btn" title="Edit" (click) = "editNote(note)">
             <i class="fas fa-pen"></i>
           </button>
           <button class="icon-btn delete-btn" (click) = "deleteNote(note)" title="Delete">
@@ -17,5 +35,6 @@
         <i [ngClass]="note.saved ? 'fas fa-bookmark' : 'far fa-bookmark'"></i>
       </button>
     </div>
+  </div>
   </div>
   

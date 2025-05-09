@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 export interface Note {
-  id: number;
+  id?: number;
   title: string;
   content: string;
   date:string;

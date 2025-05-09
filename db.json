@@ -5,7 +5,7 @@
       "title": "Routing Setup",
       "content": "Configured routing for dashboard, weather, news, and notes pages.",
       "date": "2025-05-07",
-      "saved": true
+      "saved": false
     },
     {
       "id": "4",
@@ -34,27 +34,6 @@
       "content": "Styled dashboard with custom title and divider. Improved spacing.",
       "date": "2025-05-08",
       "saved": true
-    },
-    {
-      "id": "8",
-      "title": "Note Service Created",
-      "content": "Built NoteService to handle CRUD operations using JSON server.",
-      "date": "2025-05-09",
-      "saved": true
-    },
-    {
-      "id": "9",
-      "title": "Fetch Notes",
-      "content": "Fetched and displayed notes on the notes page using the service.",
-      "date": "2025-05-09",
-      "saved": false
-    },
-    {
-      "id": "10",
-      "title": "Upcoming Tasks",
-      "content": "Implement add, update, delete features for notes with UI support.",
-      "date": "2025-05-09",
-      "saved": false
     }
   ]
 }
