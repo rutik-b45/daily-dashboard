@@ -31,12 +31,13 @@
       <img [src]="article.urlToImage" alt="news image" class="news-card-image" />
       <div class="news-card-body">
         <h3 class="news-title">{{ article.title }}</h3>
-        <p class="news-date">{{ article.publishedAt | date: 'mediumDate' }}</p>
         <p class="news-description">{{ article.description }}</p>
+        <div class="publishedAt">
         <a [href]="article.url" target="_blank" class="news-link">Read more</a>
+        <p class="news-date">{{ article.publishedAt | date: 'mediumDate' }}</p>
+      </div>
       </div>
     </div>
   </div>
 </div>
-
 </div>

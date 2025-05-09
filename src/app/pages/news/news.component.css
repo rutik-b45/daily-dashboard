@@ -1,0 +1,66 @@
+.search-wrapper {
+  position: fixed;
+  top: 76px;
+  width: 100%;
+  display: flex;
+
+margin: auto;
+  z-index: 1000;
+  padding: 12px 0px;
+  background-color: white;
+}
+  .search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 5px 10px;
+    border: 1px solid rgba(142, 135, 135, 0.3);
+  }
+  
+  .search-icon {
+    padding: 0 15px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .search-input::placeholder {
+    color: #888;
+    font-style: italic;
+  }
+  
+  .search-button {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 16px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background: linear-gradient(135deg, #0056b3, #0099cc);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+  }
+  .main-news{
+    margin-top: 80px;
+  }

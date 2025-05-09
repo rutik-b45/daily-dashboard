@@ -66,17 +66,19 @@
   .news-widget {
     background-color: #f8fafc;
     color: #1e293b;
-    padding: 20px;
     border-radius: 12px;
   }
   
   .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
+   display: flex;
+
+   flex-wrap: wrap;
+   gap: 16px;
   }
   
   .news-card {
+    max-width: 400px;
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -97,16 +99,16 @@
   }
   
   .news-card-body {
-    padding: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
   }
   
   .news-title {
     font-size: 16px;
     font-weight: 600;
-    margin: 0;
+    padding-top: 12px;
   }
   
   .news-date {
@@ -132,6 +134,7 @@
     text-decoration: underline;
   }
   
-  
-  
-  
+  .publishedAt{
+    display: flex;
+    justify-content: space-between;
+  }

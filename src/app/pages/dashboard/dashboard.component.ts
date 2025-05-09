@@ -50,7 +50,11 @@ export class DashboardComponent implements OnInit {
     this.newsService.getNews().subscribe({
       next: (response) => {
         this.loadingNews = false;
-        this.newsArticles = response.articles.slice(0, 3);
+        this.newsArticles = response.articles || [];
+
+        this.newsArticles = this.newsArticles
+          .filter(article => article.urlToImage && article.description)
+          .slice(0, 3);
       },
       error: (err) => {
         this.loadingNews = false;

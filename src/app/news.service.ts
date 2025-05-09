@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-  private apiKey = 'd37ecdc4e1c342259e6161a4688ed007';
-  private baseUrl = 'newsapi.org/v2/top-headlines';
+  private readonly apiKey = 'd37ecdc4e1c342259e6161a4688ed007';
+  private readonly baseUrl = 'https://newsapi.org/v2/top-headlines';
+
   constructor(private http: HttpClient) {}
-  getNews():Observable<any>{
-    const url = `${this.baseUrl}?sources=techcrunch&apiKey=${this.apiKey}`;
-    return this.http.get(url);
+
+  getNews(country: string = 'us', category: string = 'business'): Observable<any> {
+    const params = new HttpParams()
+      .set('country', country)
+      .set('category', category)
+      .set('apiKey', this.apiKey);
+
+    return this.http.get(this.baseUrl, { params });
   }
 }
