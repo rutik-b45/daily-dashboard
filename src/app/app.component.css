@@ -65,7 +65,9 @@
   }
   
   .children-title {
+    text-align: center;
     font-size: 22px;
+    justify-content: center;
     font-weight: 800;
     padding: 1rem 2rem;
     color: #020b14;
@@ -79,6 +81,14 @@
     animation: fadeSlide 0.4s ease-in-out;
   }
   
+  @media(max-width:480px){
+    .children-title{
+      display: none;
+    }
+    .divider{
+      display: none;
+    }
+  }
   @keyframes fadeSlide {
     from {
       opacity: 0;

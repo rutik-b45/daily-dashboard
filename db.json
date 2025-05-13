@@ -1,13 +1,6 @@
 {
   "notes": [
     {
-      "id": "3",
-      "title": "Routing Setup",
-      "content": "Configured routing for dashboard, weather, news, and notes pages.",
-      "date": "2025-05-07",
-      "saved": false
-    },
-    {
       "id": "4",
       "title": "Responsive Layout",
       "content": "Sidebar and main content adjusted for mobile and desktop views.",

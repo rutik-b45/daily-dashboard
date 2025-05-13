@@ -19,6 +19,11 @@ export class AppComponent {
     '/notes': '📝 Not It Down — Your Daily Notes',
     '/saved': '📌 Your Bookmarked Insights',
   };
+menuOpen = false;
+
+toggleMenu() {
+  this.menuOpen = !this.menuOpen;
+}
 
   constructor(private router: Router) {
     this.router.events
